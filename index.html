@@ -18,44 +18,75 @@
             </ul>
         </nav>
     </header>
-
+ 
     <section class="hero">
-        <h1>Welcome to Our Insurance Blog</h1>
-        <p>Your go-to source for the latest news and insights on insurance.</p>
-        <a href="#" class="cta-button">Get Started</a>
+        <div class="hero-badge">Trusted Insurance Insights</div>
+        <h1>Welcome to Our<br><em>Insurance Blog</em></h1>
+        <p>Your go-to source for the latest news and insights on insurance — clear, honest, and always relevant.</p>
+        <div class="cta-wrap">
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
     </section>
-
+ 
     <section class="featured-articles">
-        <h2>Featured Articles</h2>
+        <p class="section-label">Latest Reads</p>
+        <h2>
+            <span>Hand-picked for you</span>
+            Featured Articles
+        </h2>
         <div class="articles-grid">
-            <article>
+            <article class="reveal">
+                <span class="article-tag">Life Insurance</span>
                 <h3>Understanding Life Insurance</h3>
-                <p>A comprehensive guide to life insurance policies and benefits.</p>
+                <p>A comprehensive guide to life insurance policies, benefits, and how to choose the right coverage for your family.</p>
                 <a href="#">Read More</a>
             </article>
-            <article>
+            <article class="reveal">
+                <span class="article-tag">Auto</span>
                 <h3>Auto Insurance Tips</h3>
-                <p>Tips to save money on your auto insurance.</p>
+                <p>Practical tips and little-known tricks to save money on your auto insurance without sacrificing coverage.</p>
                 <a href="#">Read More</a>
             </article>
-            <article>
+            <article class="reveal">
+                <span class="article-tag">Home</span>
                 <h3>Homeowners Insurance Explained</h3>
-                <p>Learn about different types of homeowners policies.</p>
+                <p>Learn about the different types of homeowners policies and find out which one truly protects your investment.</p>
                 <a href="#">Read More</a>
             </article>
         </div>
     </section>
-
+ 
     <section class="call-to-action">
-        <h2>Ready to protect what matters?</h2>
-        <a href="#" class="cta-button">Contact Us</a>
+        <h2>Ready to protect <em>what matters most?</em></h2>
+        <a href="#" class="cta-button outline">Contact Us</a>
     </section>
-
+ 
     <footer>
-        <p>Contact us at:</p>
-        <p>Email: info@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>&copy; 2026 Insurance Blog</p>
+        <div class="footer-inner">
+            <div class="footer-logo">Insurance Blog</div>
+            <div class="footer-divider"></div>
+            <div class="footer-contacts">
+                <a href="mailto:info@example.com">info@example.com</a>
+                <span>|</span>
+                <a href="tel:+11234567890">(123) 456-7890</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Insurance Blog. All rights reserved.</p>
+        </div>
     </footer>
+ 
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 120);
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(el => obs.observe(el));
+    </script>
+ 
 </body>
 </html>
